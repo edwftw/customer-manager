@@ -27,3 +27,8 @@ services:
       - 8081:8081
     depends_on:
       - mongo
+
+  mongo-init:
+    build: ./mongo-init
+    depends_on:
+      - mongo
