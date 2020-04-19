@@ -1,33 +1,29 @@
 version: "3.1"
+
 services:
+  #application
+  customer-manager:
+    build: .
+    restart: always
+    container_name: customer-manager
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo
+
   mongo:
     image: mongo:latest
+    container_name: customer-manager-mongo
     ports:
-    - 27017:27017
-    command: --smallfiles
-    
-  mongo-init:
-    build: ./mongo-init
-    links:
-      - mongo
-      
-  mongo-client:
-    image: mongoclient/mongoclient
-    ports:
-    - 3030:3000
-    environment:
-      - MONGOCLIENT_DEFAULT_CONNECTION_URL=mongodb://mongo:27017
-    links:
-      - mongo
-    
-# APP  ***************************************************************************************
-  customer-manager:
-    image: customer-manager
-    ports:
-    - 8080:8080
-    links:
-    - mongo
-    entrypoint: "java -Djava.security.egd=file:/dev/./urandom -jar /app.jar"
-    
-    
+      - 27017:27017
+    volumes:
+      - $HOME/data/customer-manager-data:/data/db
+      - $HOME/data/customer-manager-bkp:/data/bkp
+    restart: always
 
+  mongo-express:
+    image: mongo-express:latest
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongo

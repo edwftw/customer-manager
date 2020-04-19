@@ -1,4 +1,7 @@
-FROM openjdk:8-jdk-alpine
-ADD target/customer-manager-1.0.0.jar app.jar
-ENV JAVA_OPTS=""
-ENTRYPOINT exec java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+FROM openjdk:8-jre
+COPY build/libs/customer-manager.jar ./usr/customer-manager.jar
+#EXPOSE 8080
+RUN sh -c 'touch /usr/customer-manager.jar'
+#ENTRYPOINT ["java","-jar","/usr/customer-manager.jar"]
+
+ENTRYPOINT ["java", "-Dspring.data.mongodb.uri=mongodb://mongo/local","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/customer-manager.jar"]
