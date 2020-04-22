@@ -1,18 +1,16 @@
 package org.demo.interfaceadapters.database.mongo;
 
 import org.demo.entity.Customer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Component
+@Repository
 public class CustomerRepositoryImpl implements CustomerRepository {
 
     private MongoTemplate mongoTemplate;
 
-    @Autowired
     public CustomerRepositoryImpl(final MongoTemplate mongoTemplate) {
         this.mongoTemplate = mongoTemplate;
     }

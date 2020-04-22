@@ -13,9 +13,9 @@ import java.util.List;
 @RestController()
 public class CustomerController {
 
+    @Autowired
     private CustomerUseCase customerUseCase;
 
-    @Autowired
     public CustomerController(final CustomerUseCase customerUseCase) {
         this.customerUseCase = customerUseCase;
     }

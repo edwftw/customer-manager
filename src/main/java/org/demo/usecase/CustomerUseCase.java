@@ -5,16 +5,17 @@ import org.demo.entity.Customer;
 import org.demo.interfaceadapters.database.mongo.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 @Slf4j
 public class CustomerUseCase {
 
+    @Autowired
     private CustomerRepository customerRepository;
 
-    @Autowired
     public CustomerUseCase(final CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
