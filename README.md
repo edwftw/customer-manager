@@ -13,3 +13,9 @@ $ docker-compose up
 It's done. The application is running on http://localgost:8080
 
 To test, just do a request on http://localgost:8080/customers
+
+To delete/destroy docker containers created, just run:
+```sh
+$ docker-compose down --rmi local
+```
+
