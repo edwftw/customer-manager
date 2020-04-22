@@ -10,6 +10,6 @@ After, create docker container with the application, mongo-express and mongo
 $ docker-compose up
 ```
 
-It's done. The application is running on (http://localgost:8080).
+It's done. The application is running on http://localgost:8080
 
-To test, just do a request on (http://localgost:8080/customers)
+To test, just do a request on http://localgost:8080/customers
