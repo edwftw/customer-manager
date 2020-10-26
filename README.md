@@ -1,4 +1,4 @@
-That's is simple project to implement tests with Spock Framework: http://spockframework.org/spock/docs/1.3/all_in_one.html
+That's a simple project to implement tests with Spock Framework: http://spockframework.org/spock/docs/1.3/all_in_one.html
 
 ### Development
 Inside `customer-manager` folder
