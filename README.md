@@ -11,7 +11,6 @@ After, create docker container with the application, mongo-express and mongo
 ```sh
 docker-compose up
 ```
-
 It's done. The application is running on http://localhost:8080
 
 To test, just do a request on http://localhost:8080/customers
