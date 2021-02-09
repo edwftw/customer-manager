@@ -13,6 +13,8 @@ docker-compose up
 ```
 It's done. The application is running on http://localhost:8080
 
+Mongo Express is running on http://localhost:8081, and the collection is called `customers` under the database called `local`
+
 To test, just do a request on http://localhost:8080/customers
 
 To delete/destroy docker containers created, just run:
