@@ -3,30 +3,35 @@
     "_id" : "6fbe2532-395e-4829-97d3-631dd61e60eb",
     "firstName" : "Andy",
     "lastName" : "Timmons",
-    "age": 27
+    "age": 16,
+    "isDriver": false
   },
   {
     "_id" : "6fbe2532-395e-4829-97d3-631dd61e60zz",
     "firstName" : "Joe",
     "lastName" : "Satriani",
-    "age": 33
+    "age": 33,
+    "isDriver": true
   },
   {
     "_id" : "6fbe2532-395e-4829-97d3-631dd61e60xy",
     "firstName" : "Zakk",
     "lastName" : "Wylde",
-    "age": 41
+    "age": 41,
+    "isDriver": true
   },
   {
     "_id" : "6fbe2532-395e-4829-97d3-631dd61e60kl",
     "firstName" : "Steve",
     "lastName" : "Vai",
-    "age": 57
+    "age": 57,
+    "isDriver": true
   },
   {
     "_id" : "6fbe2532-395e-4829-97d3-631dd61e60pg",
     "firstName" : "Paul",
     "lastName" : "Gilbert",
-    "age": 44
+    "age": 44,
+    "isDriver": true
   }
 ]

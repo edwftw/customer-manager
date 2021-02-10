@@ -8,7 +8,9 @@ class CustomerUseCaseSpec extends Specification {
 
     CustomerRepository customerRepository = Mock()
 
-    CustomerUseCase customerUseCase = new CustomerUseCase(customerRepository)
+    CalculateDriverEligibilityUseCase calculateDriverEligibilityUseCase = Mock()
+
+    CustomerUseCase customerUseCase = new CustomerUseCase(customerRepository, calculateDriverEligibilityUseCase)
 
     def "Should save a customer" () {
         given: "A valid customer"
