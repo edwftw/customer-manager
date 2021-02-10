@@ -16,6 +16,7 @@ public class Customer {
     private String firstName;
     private String lastName;
     private Integer age;
+    private boolean isDriver;
 
     public void generateLastName() {
         if(this.lastName.isEmpty()) {

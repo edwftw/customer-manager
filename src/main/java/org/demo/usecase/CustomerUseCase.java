@@ -14,18 +14,24 @@ import java.util.List;
 public class CustomerUseCase {
 
     private final CustomerRepository customerRepository;
+    private final CalculateDriverEligibilityUseCase calculateDriverEligibilityUseCase;
 
-    public CustomerUseCase(final CustomerRepository customerRepository) {
+    public CustomerUseCase(final CustomerRepository customerRepository, final CalculateDriverEligibilityUseCase calculateDriverEligibilityUseCase) {
         this.customerRepository = customerRepository;
+        this.calculateDriverEligibilityUseCase = calculateDriverEligibilityUseCase;
     }
 
     public List<Customer> getCustomers() {
         return customerRepository.getCustomers();
     }
 
-    public Customer save(Customer customer) {
+    public Customer save(Customer customer) throws Exception {
         log.info("Customer: {}", customer.toString());
+
         customer.generateLastName();
+
+        customer.setDriver(calculateDriverEligibilityUseCase.execute(customer.getAge()));
+
         return customerRepository.save(customer);
     }
 }
