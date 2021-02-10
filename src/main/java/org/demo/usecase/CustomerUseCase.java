@@ -13,8 +13,7 @@ import java.util.List;
 @Slf4j
 public class CustomerUseCase {
 
-    @Autowired
-    private CustomerRepository customerRepository;
+    private final CustomerRepository customerRepository;
 
     public CustomerUseCase(final CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
