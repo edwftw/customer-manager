@@ -13,8 +13,7 @@ import java.util.List;
 @RestController()
 public class CustomerController {
 
-    @Autowired
-    private CustomerUseCase customerUseCase;
+    private final CustomerUseCase customerUseCase;
 
     public CustomerController(final CustomerUseCase customerUseCase) {
         this.customerUseCase = customerUseCase;

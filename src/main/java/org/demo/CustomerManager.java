@@ -10,6 +10,4 @@ public class CustomerManager {
 	public static void main(String[] args) {
 		SpringApplication.run(CustomerManager.class, args);
 	}
-	
-
 }

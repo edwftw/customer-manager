@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public class CustomerRepositoryImpl implements CustomerRepository {
 
-    private MongoTemplate mongoTemplate;
+    private final MongoTemplate mongoTemplate;
 
     public CustomerRepositoryImpl(final MongoTemplate mongoTemplate) {
         this.mongoTemplate = mongoTemplate;
