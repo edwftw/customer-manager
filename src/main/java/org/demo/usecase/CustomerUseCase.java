@@ -3,8 +3,6 @@ package org.demo.usecase;
 import lombok.extern.slf4j.Slf4j;
 import org.demo.entity.Customer;
 import org.demo.interfaceadapters.database.mongo.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,9 +12,9 @@ import java.util.List;
 public class CustomerUseCase {
 
     private final CustomerRepository customerRepository;
-    private final CalculateDriverEligibilityUseCase calculateDriverEligibilityUseCase;
+    private final ValidateDriverEligibilityUseCase calculateDriverEligibilityUseCase;
 
-    public CustomerUseCase(final CustomerRepository customerRepository, final CalculateDriverEligibilityUseCase calculateDriverEligibilityUseCase) {
+    public CustomerUseCase(final CustomerRepository customerRepository, final ValidateDriverEligibilityUseCase calculateDriverEligibilityUseCase) {
         this.customerRepository = customerRepository;
         this.calculateDriverEligibilityUseCase = calculateDriverEligibilityUseCase;
     }
