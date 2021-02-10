@@ -3,7 +3,7 @@ package org.demo.usecase;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalculateDriverEligibilityUseCase {
+public class ValidateDriverEligibilityUseCase {
 
     public boolean execute(Integer age) throws Exception {
         if(age == null) {
