@@ -5,9 +5,9 @@ plugins {
 }
 
 apply plugin: "groovy"
+apply plugin: "jacoco"
 
 group = 'com.demo'
-//version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 configurations {
@@ -33,6 +33,9 @@ dependencies {
     testCompile "org.springframework.boot:spring-boot-starter-test"
     testCompile "br.com.six2six:fixture-factory:3.1.0"
     testCompile 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
+    testImplementation( 'com.athaydes:spock-reports:1.8.0' ) {
+        transitive = false // this avoids affecting your version of Groovy/Spock
+    }
     compileOnly "org.projectlombok:lombok:1.18.4"
 }
 
@@ -44,6 +47,18 @@ test {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
+    }
+    outputs.dir "$buildDir/spock-reports"
+    systemProperty 'com.athaydes.spockframework.report.showCodeBlocks', false
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/jacocoHtml")
     }
 }
 
